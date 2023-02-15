@@ -18,6 +18,10 @@ or
 
 Concentrated liquidity works by providing a price range in which the capital provided for the position is active. At one end of the price range, the balance of a position will consist entirely of token X. At the other end of the price range, the entire balance of a position will consist of token Y. The advantage is an increased capital efficiency (i.e. a reduction in price swings for the same capital, compared to clasical AMMs).
 
+### Docs
+
+Documentation can be found here: [https://sverps.github.io/defi-sim/](https://sverps.github.io/defi-sim/)
+
 ### Code example
 
 ```js
