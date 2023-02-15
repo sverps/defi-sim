@@ -1,39 +1,46 @@
 import { Balance, Range, Direction } from "./common.types";
-import { Position, PositionParams } from "./position";
+import {
+  ConcentratedLiquidityPosition,
+  PositionParams,
+} from "./concentrated-liquidity-position";
 
+/** Represents a liquidity pool that uses concentrated liquidity (e.g. Uniswap V3). */
 export class ConcentratedLiquidityPool {
-  positions = new Map<string, Position>();
-  sqrtPrice = 1; // square root of the amount of X you can get for a unit of Y
-  feeRate = 0;
+  /** Holds a map of all active positions in the liquidity pool. */
+  positions = new Map<string, ConcentratedLiquidityPosition>();
 
   /**
-   * Represents a liquidity pool that uses concentrated liquidity (e.g. Uniswap V3)
+   * The internal representation of the price. The square root is tracked for easier math.
+   */
+  private sqrtPrice: number; // square root of the amount of Y you can get for a unit of X
+
+  /** The amount of fees taken from each transaction with the pool. */
+  readonly feeRate: number;
+
+  /**
    * @param options.initialPrice - Initial price
    * @param options.feeRate - Initial fee rate, taken from each trade
    */
-  constructor(options: { initialPrice?: number; feeRate?: number } = {}) {
-    if (options.initialPrice) {
-      this.price = options.initialPrice;
-    }
-    if (options.feeRate) {
-      this.feeRate = options.feeRate;
-    }
+  constructor({
+    initialPrice = 1,
+    feeRate = 0,
+  }: { initialPrice?: number; feeRate?: number } = {}) {
+    this.sqrtPrice = Math.sqrt(initialPrice);
+    this.feeRate = feeRate;
   }
 
+  /** Current price of X as expressed in Y (i.e. amount of Y tokens needed to buy 1 token of X). */
   get price() {
     return this.sqrtPrice ** 2;
   }
 
-  set price(price) {
-    this.sqrtPrice = Math.sqrt(price);
-  }
-
+  /** When you enter a position, you start providing liquidity to the pool. The position will gain rewards when a trade occurs inside the range in which it is active.*/
   enterPosition(
     params:
       | { range: Range; liquidity: number; balance?: never }
       | { range: Range; liquidity?: never; balance: Balance }
   ) {
-    const position = new Position({
+    const position = new ConcentratedLiquidityPosition({
       ...(params as PositionParams),
       liquidityPool: this,
       ...(params.balance ? { sqrtPrice: this.sqrtPrice } : {}),
@@ -42,6 +49,7 @@ export class ConcentratedLiquidityPool {
     return position;
   }
 
+  /** Exit all tokens of a position and the rewards that were acrued. */
   exitPosition(id: string) {
     const position = this.positions.get(id);
     if (!position) {
@@ -54,10 +62,14 @@ export class ConcentratedLiquidityPool {
     };
   }
 
+  /** Returns the position with the requested id. */
   getPosition(id: string) {
     return this.positions.get(id);
   }
 
+  /**
+   * @param dir - The direction of price movement to consider. This becomes relevant when you're at a point exactly in between two possible ranges, each of which could have a different virtual liquidity
+   * @returns An array of positions that are currently contributing to the virtual liquidity in the active range. */
   getPositionsInRange(dir: Direction) {
     return Array.from(this.positions.values()).filter(({ sqrtRange }) =>
       dir === Direction.DOWN
@@ -66,12 +78,19 @@ export class ConcentratedLiquidityPool {
     );
   }
 
+  /**
+   * @param dir -  The direction of price movement to consider. This becomes relevant when you're at a point exactly in between two possible ranges, each of which could have a different virtual liquidity
+   * @returns The amount of virtual liquidity that is available in the current active range. */
   getLiquidityInCurrentRange(dir: Direction) {
     return this.getPositionsInRange(dir).reduce((liquidity, position) => {
       return liquidity + position.liquidity;
     }, 0);
   }
 
+  /**
+   * Consider all positions whose range includes the current price and find the narrowest range that is contained by all the ranges of the matched positions. Within this range, the liquidity stays constant during price movements.
+   * @param dir -  The direction of price movement to consider. This becomes relevant when you're at a point exactly in between two possible ranges, each of which could have a different virtual liquidity
+   * @returns The current active range. */
   getCurrentRange(dir: Direction = Direction.UP) {
     const currentRange = this.getPositionsInRange(dir)
       .map((position) => position.sqrtRange)
@@ -91,6 +110,7 @@ export class ConcentratedLiquidityPool {
     return currentRange;
   }
 
+  /** @returns The amount of X tokens you receive. */
   sellY(yWithFees: number): number {
     if (yWithFees <= 0) {
       throw Error("Can't sell a negative amount");
@@ -124,6 +144,7 @@ export class ConcentratedLiquidityPool {
     return -dX;
   }
 
+  /** @returns The amount of X tokens you need to pay. */
   buyY(yDesired: number): number {
     if (yDesired <= 0) {
       throw Error("Can't buy a negative amount");
@@ -156,6 +177,7 @@ export class ConcentratedLiquidityPool {
     return dX;
   }
 
+  /** @returns The amount of Y tokens you receive. */
   sellX(xWithFees: number): number {
     if (xWithFees <= 0) {
       throw Error("Can't sell a negative amount");
@@ -189,6 +211,7 @@ export class ConcentratedLiquidityPool {
     return -dY;
   }
 
+  /** @returns The amount of Y tokens you need to pay. */
   buyX(xDesired: number): number {
     if (xDesired <= 0) {
       throw Error("Can't buy a negative amount");
@@ -221,6 +244,9 @@ export class ConcentratedLiquidityPool {
     return dY;
   }
 
+  /** Make a trade that moves the price to the target.
+   * @returns The balance delta required to make this trade. Negative values are paid to the pool, positive values are received in return.
+   */
   movePrice(targetPrice: number): { delta: Balance } {
     const sqrtTargetPrice = Math.sqrt(targetPrice);
     if (this.sqrtPrice === sqrtTargetPrice) {

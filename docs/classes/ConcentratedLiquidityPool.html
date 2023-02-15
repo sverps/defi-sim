@@ -15,12 +15,15 @@
 <li><a href="../modules.html">defi-sim</a></li>
 <li><a href="ConcentratedLiquidityPool.html">ConcentratedLiquidityPool</a></li></ul>
 <h1>Class ConcentratedLiquidityPool</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>Represents a liquidity pool that uses concentrated liquidity (e.g. Uniswap V3).</p>
+</div></section>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
 <li><span class="target">ConcentratedLiquidityPool</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:4</li></ul></aside>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L8">concentrated-liquidity-pool.ts:8</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -34,7 +37,7 @@
 <h3 class="tsd-index-heading">Properties</h3>
 <div class="tsd-index-list"><a href="ConcentratedLiquidityPool.html#feeRate" class="tsd-index-link tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF984D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-1024-path"></rect><path d="M9.354 16V7.24H12.174C12.99 7.24 13.638 7.476 14.118 7.948C14.606 8.412 14.85 9.036 14.85 9.82C14.85 10.604 14.606 11.232 14.118 11.704C13.638 12.168 12.99 12.4 12.174 12.4H10.434V16H9.354ZM10.434 11.428H12.174C12.646 11.428 13.022 11.284 13.302 10.996C13.59 10.7 13.734 10.308 13.734 9.82C13.734 9.324 13.59 8.932 13.302 8.644C13.022 8.356 12.646 8.212 12.174 8.212H10.434V11.428Z" fill="var(--color-text)" id="icon-1024-text"></path></svg><span>fee<wbr/>Rate</span></a>
 <a href="ConcentratedLiquidityPool.html#positions" class="tsd-index-link tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>positions</span></a>
-<a href="ConcentratedLiquidityPool.html#sqrtPrice" class="tsd-index-link tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>sqrt<wbr/>Price</span></a>
+<a href="ConcentratedLiquidityPool.html#sqrtPrice" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>sqrt<wbr/>Price</span></a>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Accessors</h3>
@@ -62,44 +65,44 @@
 <section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class"><a id="constructor" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-<li class="tsd-signature tsd-anchor-link" id="constructor.new_ConcentratedLiquidityPool">new <wbr/>Concentrated<wbr/>Liquidity<wbr/>Pool<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span><br/><span>    </span>feeRate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>initialPrice<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ConcentratedLiquidityPool.html" class="tsd-signature-type" data-tsd-kind="Class">ConcentratedLiquidityPool</a><a href="#constructor.new_ConcentratedLiquidityPool" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="constructor.new_ConcentratedLiquidityPool">new <wbr/>Concentrated<wbr/>Liquidity<wbr/>Pool<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span><br/><span>    </span>feeRate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>initialPrice<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ConcentratedLiquidityPool.html" class="tsd-signature-type" data-tsd-kind="Class">ConcentratedLiquidityPool</a><a href="#constructor.new_ConcentratedLiquidityPool" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Represents a liquidity pool that uses concentrated liquidity (e.g. Uniswap V3)</p>
-</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>options: <span class="tsd-signature-symbol">{ </span><br/><span>    </span>feeRate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>initialPrice<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol"> = {}</span></h5>
+<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span><br/><span>    </span>feeRate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>initialPrice<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol"> = {}</span></h5>
 <ul class="tsd-parameters">
 <li class="tsd-parameter">
-<h5><code class="tsd-tag ts-flagOptional">Optional</code> fee<wbr/>Rate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
-<div class="tsd-comment tsd-typography"><p>Initial fee rate, taken from each trade</p>
-</div></li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> fee<wbr/>Rate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5></li>
 <li class="tsd-parameter">
-<h5><code class="tsd-tag ts-flagOptional">Optional</code> initial<wbr/>Price<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
-<div class="tsd-comment tsd-typography"><p>Initial price</p>
-</div></li></ul></li></ul></div>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> initial<wbr/>Price<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5></li></ul></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="ConcentratedLiquidityPool.html" class="tsd-signature-type" data-tsd-kind="Class">ConcentratedLiquidityPool</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:14</li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L24">concentrated-liquidity-pool.ts:24</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="feeRate" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>fee<wbr/>Rate</span><a href="#feeRate" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">fee<wbr/>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div><aside class="tsd-sources">
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>fee<wbr/>Rate</span><a href="#feeRate" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">fee<wbr/>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>The amount of fees taken from each transaction with the pool.</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:7</li></ul></aside></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L18">concentrated-liquidity-pool.ts:18</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="positions" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>positions</span><a href="#positions" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">positions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="Position.html" class="tsd-signature-type" data-tsd-kind="Class">Position</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div><aside class="tsd-sources">
+<div class="tsd-signature">positions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="ConcentratedLiquidityPosition.html" class="tsd-signature-type" data-tsd-kind="Class">ConcentratedLiquidityPosition</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+<div class="tsd-comment tsd-typography"><p>Holds a map of all active positions in the liquidity pool.</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:5</li></ul></aside></section>
-<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="sqrtPrice" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>sqrt<wbr/>Price</span><a href="#sqrtPrice" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">sqrt<wbr/>Price<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div><aside class="tsd-sources">
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L10">concentrated-liquidity-pool.ts:10</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private"><a id="sqrtPrice" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>sqrt<wbr/>Price</span><a href="#sqrtPrice" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">sqrt<wbr/>Price<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>The internal representation of the price. The square root is tracked for easier math.</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:6</li></ul></aside></section></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L15">concentrated-liquidity-pool.ts:15</a></li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Accessors</h2>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="price" class="tsd-anchor"></a>
@@ -107,19 +110,11 @@
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
 <li class="tsd-signature" id="price.price-1"><span class="tsd-signature-symbol">get</span> price<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Current price of X as expressed in Y (i.e. amount of Y tokens needed to buy 1 token of X).</p>
+</div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:23</li></ul></aside></li>
-<li class="tsd-signature" id="price.price-2"><span class="tsd-signature-symbol">set</span> price<span class="tsd-signature-symbol">(</span>price<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-<li class="tsd-description">
-<div class="tsd-parameters">
-<h4 class="tsd-parameters-title">Parameters</h4>
-<ul class="tsd-parameter-list">
-<li>
-<h5>price: <span class="tsd-signature-type">number</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in concentrated-liquidity-pool.ts:27</li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L33">concentrated-liquidity-pool.ts:33</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private"><a id="addFeesToPositions" class="tsd-anchor"></a>
@@ -143,12 +138,15 @@
 <h5>total<wbr/>Liquidity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5></li></ul></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:265</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L291">concentrated-liquidity-pool.ts:291</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="buyX" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>buyX</span><a href="#buyX" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="buyX.buyX-1">buyX<span class="tsd-signature-symbol">(</span>xDesired<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#buyX.buyX-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography">
+<h3>Returns</h3><p>The amount of Y tokens you need to pay.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -156,12 +154,15 @@
 <h5>xDesired: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:192</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L215">concentrated-liquidity-pool.ts:215</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="buyY" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>buyY</span><a href="#buyY" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="buyY.buyY-1">buyY<span class="tsd-signature-symbol">(</span>yDesired<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#buyY.buyY-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography">
+<h3>Returns</h3><p>The amount of X tokens you need to pay.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -169,25 +170,29 @@
 <h5>yDesired: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:127</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L148">concentrated-liquidity-pool.ts:148</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="enterPosition" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>enter<wbr/>Position</span><a href="#enterPosition" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-<li class="tsd-signature tsd-anchor-link" id="enterPosition.enterPosition-1">enter<wbr/>Position<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span><br/><span>    </span>balance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>liquidity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>range<span class="tsd-signature-symbol">: </span><a href="../types/Range.html" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span><br/><span>    </span>balance<span class="tsd-signature-symbol">: </span><a href="../types/Balance.html" class="tsd-signature-type" data-tsd-kind="Type alias">Balance</a><span class="tsd-signature-symbol">; </span><br/><span>    </span>liquidity<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>range<span class="tsd-signature-symbol">: </span><a href="../types/Range.html" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Position.html" class="tsd-signature-type" data-tsd-kind="Class">Position</a><a href="#enterPosition.enterPosition-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="enterPosition.enterPosition-1">enter<wbr/>Position<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span><br/><span>    </span>balance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>liquidity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>range<span class="tsd-signature-symbol">: </span><a href="../types/Range.html" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span><br/><span>    </span>balance<span class="tsd-signature-symbol">: </span><a href="../types/Balance.html" class="tsd-signature-type" data-tsd-kind="Type alias">Balance</a><span class="tsd-signature-symbol">; </span><br/><span>    </span>liquidity<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>range<span class="tsd-signature-symbol">: </span><a href="../types/Range.html" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ConcentratedLiquidityPosition.html" class="tsd-signature-type" data-tsd-kind="Class">ConcentratedLiquidityPosition</a><a href="#enterPosition.enterPosition-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>When you enter a position, you start providing liquidity to the pool. The position will gain rewards when a trade occurs inside the range in which it is active.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
 <h5>params: <span class="tsd-signature-symbol">{ </span><br/><span>    </span>balance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>liquidity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>range<span class="tsd-signature-symbol">: </span><a href="../types/Range.html" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span><br/><span>    </span>balance<span class="tsd-signature-symbol">: </span><a href="../types/Balance.html" class="tsd-signature-type" data-tsd-kind="Type alias">Balance</a><span class="tsd-signature-symbol">; </span><br/><span>    </span>liquidity<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>range<span class="tsd-signature-symbol">: </span><a href="../types/Range.html" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <a href="Position.html" class="tsd-signature-type" data-tsd-kind="Class">Position</a></h4><aside class="tsd-sources">
+<h4 class="tsd-returns-title">Returns <a href="ConcentratedLiquidityPosition.html" class="tsd-signature-type" data-tsd-kind="Class">ConcentratedLiquidityPosition</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:31</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L38">concentrated-liquidity-pool.ts:38</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="exitPosition" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>exit<wbr/>Position</span><a href="#exitPosition" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="exitPosition.exitPosition-1">exit<wbr/>Position<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span><br/><span>    </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><a href="#exitPosition.exitPosition-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Exit all tokens of a position and the rewards that were acrued.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -200,20 +205,26 @@
 <li class="tsd-parameter">
 <h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5></li></ul><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:45</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L53">concentrated-liquidity-pool.ts:53</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="getCurrentRange" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Current<wbr/>Range</span><a href="#getCurrentRange" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="getCurrentRange.getCurrentRange-1">get<wbr/>Current<wbr/>Range<span class="tsd-signature-symbol">(</span>dir<span class="tsd-signature-symbol">?: </span><a href="../enums/Direction.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Direction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../types/Range.html" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a><a href="#getCurrentRange.getCurrentRange-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Consider all positions whose range includes the current price and find the narrowest range that is contained by all the ranges of the matched positions. Within this range, the liquidity stays constant during price movements.</p>
+
+<h3>Returns</h3><p>The current active range.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>dir: <a href="../enums/Direction.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Direction</a><span class="tsd-signature-symbol"> = Direction.UP</span></h5></li></ul></div>
+<h5>dir: <a href="../enums/Direction.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Direction</a><span class="tsd-signature-symbol"> = Direction.UP</span></h5>
+<div class="tsd-comment tsd-typography"><p>The direction of price movement to consider. This becomes relevant when you&#39;re at a point exactly in between two possible ranges, each of which could have a different virtual liquidity</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="../types/Range.html" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:75</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L94">concentrated-liquidity-pool.ts:94</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private"><a id="getDInvSqrtPrice" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>getDInv<wbr/>Sqrt<wbr/>Price</span><a href="#getDInvSqrtPrice" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
@@ -226,7 +237,7 @@
 <h5>dSqrtPrice: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:289</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L315">concentrated-liquidity-pool.ts:315</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private"><a id="getDSqrtPrice" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>getDSqrt<wbr/>Price</span><a href="#getDSqrtPrice" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
@@ -239,51 +250,67 @@
 <h5>dInvSqrtPrice: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:295</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L321">concentrated-liquidity-pool.ts:321</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="getLiquidityInCurrentRange" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Liquidity<wbr/>In<wbr/>Current<wbr/>Range</span><a href="#getLiquidityInCurrentRange" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="getLiquidityInCurrentRange.getLiquidityInCurrentRange-1">get<wbr/>Liquidity<wbr/>In<wbr/>Current<wbr/>Range<span class="tsd-signature-symbol">(</span>dir<span class="tsd-signature-symbol">: </span><a href="../enums/Direction.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Direction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#getLiquidityInCurrentRange.getLiquidityInCurrentRange-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography">
+<h3>Returns</h3><p>The amount of virtual liquidity that is available in the current active range.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>dir: <a href="../enums/Direction.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Direction</a></h5></li></ul></div>
+<h5>dir: <a href="../enums/Direction.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Direction</a></h5>
+<div class="tsd-comment tsd-typography"><p>The direction of price movement to consider. This becomes relevant when you&#39;re at a point exactly in between two possible ranges, each of which could have a different virtual liquidity</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:69</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L84">concentrated-liquidity-pool.ts:84</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="getPosition" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Position</span><a href="#getPosition" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-<li class="tsd-signature tsd-anchor-link" id="getPosition.getPosition-1">get<wbr/>Position<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="Position.html" class="tsd-signature-type" data-tsd-kind="Class">Position</a><a href="#getPosition.getPosition-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="getPosition.getPosition-1">get<wbr/>Position<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="ConcentratedLiquidityPosition.html" class="tsd-signature-type" data-tsd-kind="Class">ConcentratedLiquidityPosition</a><a href="#getPosition.getPosition-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns the position with the requested id.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
 <h5>id: <span class="tsd-signature-type">string</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="Position.html" class="tsd-signature-type" data-tsd-kind="Class">Position</a></h4><aside class="tsd-sources">
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="ConcentratedLiquidityPosition.html" class="tsd-signature-type" data-tsd-kind="Class">ConcentratedLiquidityPosition</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:57</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L66">concentrated-liquidity-pool.ts:66</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="getPositionsInRange" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Positions<wbr/>In<wbr/>Range</span><a href="#getPositionsInRange" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-<li class="tsd-signature tsd-anchor-link" id="getPositionsInRange.getPositionsInRange-1">get<wbr/>Positions<wbr/>In<wbr/>Range<span class="tsd-signature-symbol">(</span>dir<span class="tsd-signature-symbol">: </span><a href="../enums/Direction.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Direction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Position.html" class="tsd-signature-type" data-tsd-kind="Class">Position</a><span class="tsd-signature-symbol">[]</span><a href="#getPositionsInRange.getPositionsInRange-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="getPositionsInRange.getPositionsInRange-1">get<wbr/>Positions<wbr/>In<wbr/>Range<span class="tsd-signature-symbol">(</span>dir<span class="tsd-signature-symbol">: </span><a href="../enums/Direction.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Direction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ConcentratedLiquidityPosition.html" class="tsd-signature-type" data-tsd-kind="Class">ConcentratedLiquidityPosition</a><span class="tsd-signature-symbol">[]</span><a href="#getPositionsInRange.getPositionsInRange-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography">
+<h3>Returns</h3><p>An array of positions that are currently contributing to the virtual liquidity in the active range.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>dir: <a href="../enums/Direction.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Direction</a></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <a href="Position.html" class="tsd-signature-type" data-tsd-kind="Class">Position</a><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
+<h5>dir: <a href="../enums/Direction.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Direction</a></h5>
+<div class="tsd-comment tsd-typography"><p>The direction of price movement to consider. This becomes relevant when you&#39;re at a point exactly in between two possible ranges, each of which could have a different virtual liquidity</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="ConcentratedLiquidityPosition.html" class="tsd-signature-type" data-tsd-kind="Class">ConcentratedLiquidityPosition</a><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:61</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L73">concentrated-liquidity-pool.ts:73</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="movePrice" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>move<wbr/>Price</span><a href="#movePrice" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="movePrice.movePrice-1">move<wbr/>Price<span class="tsd-signature-symbol">(</span>targetPrice<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span><br/><span>    </span>delta<span class="tsd-signature-symbol">: </span><a href="../types/Balance.html" class="tsd-signature-type" data-tsd-kind="Type alias">Balance</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><a href="#movePrice.movePrice-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Make a trade that moves the price to the target.</p>
+
+<h3>Returns</h3><p>The balance delta required to make this trade. Negative values are paid to the pool, positive values are received in return.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -294,12 +321,15 @@
 <li class="tsd-parameter">
 <h5>delta<span class="tsd-signature-symbol">: </span><a href="../types/Balance.html" class="tsd-signature-type" data-tsd-kind="Type alias">Balance</a></h5></li></ul><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:224</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L250">concentrated-liquidity-pool.ts:250</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="sellX" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>sellX</span><a href="#sellX" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="sellX.sellX-1">sellX<span class="tsd-signature-symbol">(</span>xWithFees<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#sellX.sellX-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography">
+<h3>Returns</h3><p>The amount of Y tokens you receive.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -307,12 +337,15 @@
 <h5>xWithFees: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:159</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L181">concentrated-liquidity-pool.ts:181</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="sellY" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>sellY</span><a href="#sellY" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="sellY.sellY-1">sellY<span class="tsd-signature-symbol">(</span>yWithFees<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#sellY.sellY-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography">
+<h3>Returns</h3><p>The amount of X tokens you receive.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -320,7 +353,7 @@
 <h5>yWithFees: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in concentrated-liquidity-pool.ts:94</li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/sverps/defi-sim/blob/0baff10/src/concentrated-liquidity-pool.ts#L114">concentrated-liquidity-pool.ts:114</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -349,7 +382,7 @@
 <li class="tsd-kind-constructor tsd-parent-kind-class"><a href="ConcentratedLiquidityPool.html#constructor" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-512-path"></use><use href="#icon-512-text"></use></svg>constructor</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class"><a href="ConcentratedLiquidityPool.html#feeRate" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>fee<wbr/>Rate</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class"><a href="ConcentratedLiquidityPool.html#positions" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>positions</a></li>
-<li class="tsd-kind-property tsd-parent-kind-class"><a href="ConcentratedLiquidityPool.html#sqrtPrice" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>sqrt<wbr/>Price</a></li>
+<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="ConcentratedLiquidityPool.html#sqrtPrice" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>sqrt<wbr/>Price</a></li>
 <li class="tsd-kind-accessor tsd-parent-kind-class"><a href="ConcentratedLiquidityPool.html#price" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg>price</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="ConcentratedLiquidityPool.html#addFeesToPositions" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>add<wbr/>Fees<wbr/>To<wbr/>Positions</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="ConcentratedLiquidityPool.html#buyX" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>buyX</a></li>

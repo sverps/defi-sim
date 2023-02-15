@@ -3,17 +3,21 @@ import { Balance, Range } from "./common.types";
 import { ConcentratedLiquidityPool } from "./concentrated-liquidity-pool";
 import { getMaxLiquidity, getTokenAmounts } from "./utils";
 
-type BaseParam = { id?: string; liquidityPool: ConcentratedLiquidityPool };
-type RangeParam =
+export type BaseParam = {
+  id?: string;
+  liquidityPool: ConcentratedLiquidityPool;
+};
+export type RangeParam =
   | { range: Range; sqrtRange?: never }
   | { range?: never; sqrtRange: Range };
-type LiquidityParam =
+export type LiquidityParam =
   | { liquidity: number; balance?: never }
   | { liquidity?: never; balance: Balance; sqrtPrice: number };
 
 export type PositionParams = BaseParam & RangeParam & LiquidityParam;
 
-export class Position {
+/** Represents a position in a {@link ConcentratedLiquidityPool | liquidity pool that uses concentrated liquidity} */
+export class ConcentratedLiquidityPosition {
   id: string;
   sqrtRange: Range;
   liquidity: number;
@@ -49,7 +53,7 @@ export class Position {
   get balance() {
     return getTokenAmounts(
       { liquidity: this.liquidity, sqrtRange: this.sqrtRange },
-      this.liquidityPool.sqrtPrice
+      (this.liquidityPool as any).sqrtPrice // To avoid losing precision, we access the private property sqrtPrice directly
     );
   }
 }

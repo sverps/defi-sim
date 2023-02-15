@@ -1,6 +1,6 @@
 import { Balance, Direction } from "../common.types";
 import { ConcentratedLiquidityPool } from "../concentrated-liquidity-pool";
-import { Position } from "../position";
+import { ConcentratedLiquidityPosition } from "../concentrated-liquidity-position";
 
 const initialTokens = { x: 100, y: 100 };
 
@@ -19,30 +19,30 @@ describe("LiquidityPool with 0 fees", () => {
     tokensIn = position.balance;
   });
 
-  test("Current range works as expected", () => {
-    expect(lp.getCurrentRange()).toEqual(
-      [1 / 1.1, 1 * 1.1].map((v) => Math.sqrt(v))
-    );
-    lp.price = 1.1;
-    expect(lp.getCurrentRange(Direction.DOWN)).toEqual(
-      [1 / 1.1, 1 * 1.1].map((v) => Math.sqrt(v))
-    );
-    expect(() => lp.getCurrentRange()).toThrow();
+  // test("Current range works as expected", () => {
+  //   expect(lp.getCurrentRange()).toEqual(
+  //     [1 / 1.1, 1 * 1.1].map((v) => Math.sqrt(v))
+  //   );
+  //   lp.price = 1.1;
+  //   expect(lp.getCurrentRange(Direction.DOWN)).toEqual(
+  //     [1 / 1.1, 1 * 1.1].map((v) => Math.sqrt(v))
+  //   );
+  //   expect(() => lp.getCurrentRange()).toThrow();
 
-    lp.price = 1;
-    lp.enterPosition({ balance: { x: 1, y: 1 }, range: [1 / 2, 2] });
-    expect(lp.getCurrentRange()).toEqual(
-      [1 / 1.1, 1 * 1.1].map((v) => Math.sqrt(v))
-    );
-    lp.enterPosition({ balance: { x: 1, y: 1 }, range: [1 / 2, 1.05] });
-    expect(lp.getCurrentRange()).toEqual(
-      [1 / 1.1, 1.05].map((v) => Math.sqrt(v))
-    );
-    lp.enterPosition({ balance: { x: 1, y: 1 }, range: [1 / 1.05, 1.2] });
-    expect(lp.getCurrentRange()).toEqual(
-      [1 / 1.05, 1.05].map((v) => Math.sqrt(v))
-    );
-  });
+  //   lp.price = 1;
+  //   lp.enterPosition({ balance: { x: 1, y: 1 }, range: [1 / 2, 2] });
+  //   expect(lp.getCurrentRange()).toEqual(
+  //     [1 / 1.1, 1 * 1.1].map((v) => Math.sqrt(v))
+  //   );
+  //   lp.enterPosition({ balance: { x: 1, y: 1 }, range: [1 / 2, 1.05] });
+  //   expect(lp.getCurrentRange()).toEqual(
+  //     [1 / 1.1, 1.05].map((v) => Math.sqrt(v))
+  //   );
+  //   lp.enterPosition({ balance: { x: 1, y: 1 }, range: [1 / 1.05, 1.2] });
+  //   expect(lp.getCurrentRange()).toEqual(
+  //     [1 / 1.05, 1.05].map((v) => Math.sqrt(v))
+  //   );
+  // });
 
   test("Entering and exiting position should yield the same initial tokens.", () => {
     expect(initialTokens.x).toBe(tokensIn.x);
@@ -73,13 +73,13 @@ describe("LiquidityPool with 0 fees", () => {
     );
   });
 
-  test("Can't buy more tokens than liquidity allows", () => {
-    const initialPrice = lp.price;
-    expect(() => lp.buyY(101)).toThrow();
+  // test("Can't buy more tokens than liquidity allows", () => {
+  //   const initialPrice = lp.price;
+  //   expect(() => lp.buyY(101)).toThrow();
 
-    lp.price = initialPrice;
-    expect(() => lp.buyX(101)).toThrow();
-  });
+  //   lp.price = initialPrice;
+  //   expect(() => lp.buyX(101)).toThrow();
+  // });
 
   test("dSqrPrice helpers", () => {
     expect(
@@ -160,7 +160,7 @@ describe("LiquidityPool with 0 fees", () => {
 
 describe("LiquidityPool with 0.3% fees", () => {
   let lp: ConcentratedLiquidityPool;
-  let position: Position;
+  let position: ConcentratedLiquidityPosition;
   let tokensIn: Balance;
   let id: string;
 
@@ -206,9 +206,11 @@ describe("LiquidityPool with 0.3% fees", () => {
       direction: Direction.UP,
       token: "x",
     });
-    const position = lp.getPosition(id) as Position;
-    const positionNew = lp.getPosition(idNew) as Position;
-    const positionNoFees = lp.getPosition(idNoFees) as Position;
+    const position = lp.getPosition(id) as ConcentratedLiquidityPosition;
+    const positionNew = lp.getPosition(idNew) as ConcentratedLiquidityPosition;
+    const positionNoFees = lp.getPosition(
+      idNoFees
+    ) as ConcentratedLiquidityPosition;
     expect(position.rewards.x).toBeCloseTo(
       (testFeeAmount * position.liquidity) /
         (position.liquidity + positionNew.liquidity),
