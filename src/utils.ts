@@ -103,9 +103,3 @@ export function getRange({
     return [partialRange.pa, pb];
   }
 }
-
-export function getTokensToTrade({ x, y }: Balance, price: number) {
-  const xToSell = (x - y / price) / 2;
-  const yToSell = (y - x * price) / 2;
-  return xToSell < 0 ? { x: 0, y: yToSell } : { x: xToSell, y: 0 };
-}

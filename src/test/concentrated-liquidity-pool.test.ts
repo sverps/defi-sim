@@ -1,17 +1,17 @@
 import { Balance, Direction } from "../common.types";
-import { LiquidityPool } from "../concentrated-liquidity";
+import { ConcentratedLiquidityPool } from "../concentrated-liquidity-pool";
 import { Position } from "../position";
 
 const initialTokens = { x: 100, y: 100 };
 
 describe("LiquidityPool with 0 fees", () => {
-  let lp: LiquidityPool;
+  let lp: ConcentratedLiquidityPool;
   let tokensIn: Balance;
   let id: string;
 
   beforeEach(() => {
-    lp = new LiquidityPool();
-    const position = lp.addPosition({
+    lp = new ConcentratedLiquidityPool();
+    const position = lp.enterPosition({
       balance: { ...initialTokens },
       range: [1 / 1.1, 1 * 1.1],
     });
@@ -30,25 +30,25 @@ describe("LiquidityPool with 0 fees", () => {
     expect(() => lp.getCurrentRange()).toThrow();
 
     lp.price = 1;
-    lp.addPosition({ balance: { x: 1, y: 1 }, range: [1 / 2, 2] });
+    lp.enterPosition({ balance: { x: 1, y: 1 }, range: [1 / 2, 2] });
     expect(lp.getCurrentRange()).toEqual(
       [1 / 1.1, 1 * 1.1].map((v) => Math.sqrt(v))
     );
-    lp.addPosition({ balance: { x: 1, y: 1 }, range: [1 / 2, 1.05] });
+    lp.enterPosition({ balance: { x: 1, y: 1 }, range: [1 / 2, 1.05] });
     expect(lp.getCurrentRange()).toEqual(
       [1 / 1.1, 1.05].map((v) => Math.sqrt(v))
     );
-    lp.addPosition({ balance: { x: 1, y: 1 }, range: [1 / 1.05, 1.2] });
+    lp.enterPosition({ balance: { x: 1, y: 1 }, range: [1 / 1.05, 1.2] });
     expect(lp.getCurrentRange()).toEqual(
       [1 / 1.05, 1.05].map((v) => Math.sqrt(v))
     );
   });
 
-  test("Adding and removing position should yield the same initial tokens.", () => {
+  test("Entering and exiting position should yield the same initial tokens.", () => {
     expect(initialTokens.x).toBe(tokensIn.x);
     expect(initialTokens.y).toBe(tokensIn.y);
 
-    const tokensOut = lp.removePosition(id);
+    const tokensOut = lp.exitPosition(id);
 
     expect(tokensOut.x).toBe(tokensIn.x);
     expect(tokensOut.y).toBe(tokensIn.y);
@@ -57,14 +57,14 @@ describe("LiquidityPool with 0 fees", () => {
   test("Liquidity in current range should be calculated correctly", () => {
     const unitOfLiquidity = 2148.808848170151;
     expect(lp.getLiquidityInCurrentRange(Direction.UP)).toBe(unitOfLiquidity);
-    lp.addPosition({
+    lp.enterPosition({
       balance: { ...initialTokens },
       range: [1 / 1.1, 1 * 1.1],
     });
     expect(lp.getLiquidityInCurrentRange(Direction.UP)).toBe(
       unitOfLiquidity * 2
     );
-    lp.addPosition({
+    lp.enterPosition({
       balance: { x: initialTokens.x * 2, y: initialTokens.y * 2 },
       range: [1 / 1.1, 1 * 1.1],
     });
@@ -125,7 +125,7 @@ describe("LiquidityPool with 0 fees", () => {
 
   test("Total tokens should remain constant when moving price", () => {
     const { delta } = lp.movePrice(1.1);
-    const tokensInLp = lp.removePosition(id);
+    const tokensInLp = lp.exitPosition(id);
     expect(initialTokens.x + delta.x).toBeCloseTo(tokensInLp.x, 12);
     expect(initialTokens.y + delta.y).toBeCloseTo(tokensInLp.y, 12);
   });
@@ -133,13 +133,13 @@ describe("LiquidityPool with 0 fees", () => {
   test("Total tokens should remain constant when moving price and trading", () => {
     const { delta } = lp.movePrice(1.05);
     const xReceived = lp.sellY(10); // sell 10 Y
-    const tokensInLp = lp.removePosition(id);
+    const tokensInLp = lp.exitPosition(id);
     expect(initialTokens.x + delta.x - xReceived).toBeCloseTo(tokensInLp.x, 12);
     expect(initialTokens.y + delta.y + 10).toBeCloseTo(tokensInLp.y, 12);
   });
 
   test("Total tokens should remain constant when moving price and trading with multiple positions", () => {
-    const pos2 = lp.addPosition({
+    const pos2 = lp.enterPosition({
       liquidity: 10000,
       range: [1 / 2, 1.2],
     });
@@ -147,8 +147,8 @@ describe("LiquidityPool with 0 fees", () => {
     const { delta } = lp.movePrice(1.05);
     const ySold = 20;
     const xReceived = lp.sellY(ySold); // sell 10 Y
-    const tokensInLp = lp.removePosition(id);
-    const tokensInLp2 = lp.removePosition(pos2.id);
+    const tokensInLp = lp.exitPosition(id);
+    const tokensInLp2 = lp.exitPosition(pos2.id);
     expect(
       initialTokens.x + initialBalancePos2.x + delta.x - xReceived
     ).toBeCloseTo(tokensInLp.x + tokensInLp2.x, 11);
@@ -159,14 +159,14 @@ describe("LiquidityPool with 0 fees", () => {
 });
 
 describe("LiquidityPool with 0.3% fees", () => {
-  let lp: LiquidityPool;
+  let lp: ConcentratedLiquidityPool;
   let position: Position;
   let tokensIn: Balance;
   let id: string;
 
   beforeEach(() => {
-    lp = new LiquidityPool({ feeRate: 0.003 });
-    position = lp.addPosition({
+    lp = new ConcentratedLiquidityPool({ feeRate: 0.003 });
+    position = lp.enterPosition({
       balance: { ...initialTokens },
       range: [1 / 1.1, 1 * 1.1],
     });
@@ -190,13 +190,13 @@ describe("LiquidityPool with 0.3% fees", () => {
 
   test("Adding fees to positions should split it according to liquidity", () => {
     const testFeeAmount = 0.5;
-    const { id: idNew } = lp.addPosition({
+    const { id: idNew } = lp.enterPosition({
       liquidity: 1000,
       range: [1, 1.1 ** 3],
     });
 
     // Add a position that should not receive any fees
-    const { id: idNoFees } = lp.addPosition({
+    const { id: idNoFees } = lp.enterPosition({
       liquidity: 1000,
       range: [0.95, 1],
     });

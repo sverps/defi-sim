@@ -1,9 +1,9 @@
 import { randomUUID } from "crypto";
 import { Balance, Range } from "./common.types";
-import { LiquidityPool } from "./concentrated-liquidity";
+import { ConcentratedLiquidityPool } from "./concentrated-liquidity-pool";
 import { getMaxLiquidity, getTokenAmounts } from "./utils";
 
-type BaseParam = { id?: string; liquidityPool: LiquidityPool };
+type BaseParam = { id?: string; liquidityPool: ConcentratedLiquidityPool };
 type RangeParam =
   | { range: Range; sqrtRange?: never }
   | { range?: never; sqrtRange: Range };
@@ -19,7 +19,7 @@ export class Position {
   liquidity: number;
   initialBalance: Balance;
   rewards: Balance;
-  liquidityPool: LiquidityPool;
+  liquidityPool: ConcentratedLiquidityPool;
 
   constructor(params: PositionParams) {
     this.id = params.id ?? randomUUID();

@@ -1,12 +1,16 @@
-import crypto from "crypto";
 import { Balance, Range, Direction } from "./common.types";
 import { Position, PositionParams } from "./position";
 
-export class LiquidityPool {
+export class ConcentratedLiquidityPool {
   positions = new Map<string, Position>();
   sqrtPrice = 1; // square root of the amount of X you can get for a unit of Y
   feeRate = 0;
 
+  /**
+   * Represents a liquidity pool that uses concentrated liquidity (e.g. Uniswap V3)
+   * @param options.initialPrice - Initial price
+   * @param options.feeRate - Initial fee rate, taken from each trade
+   */
   constructor(options: { initialPrice?: number; feeRate?: number } = {}) {
     if (options.initialPrice) {
       this.price = options.initialPrice;
@@ -24,7 +28,11 @@ export class LiquidityPool {
     this.sqrtPrice = Math.sqrt(price);
   }
 
-  addPosition(params: Omit<PositionParams, "sqrtPrice" | "liquidityPool">) {
+  enterPosition(
+    params:
+      | { range: Range; liquidity: number; balance?: never }
+      | { range: Range; liquidity?: never; balance: Balance }
+  ) {
     const position = new Position({
       ...(params as PositionParams),
       liquidityPool: this,
@@ -34,7 +42,7 @@ export class LiquidityPool {
     return position;
   }
 
-  removePosition(id: string) {
+  exitPosition(id: string) {
     const position = this.positions.get(id);
     if (!position) {
       throw Error("Position doesn't exist");

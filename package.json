@@ -1,6 +1,6 @@
 {
   "name": "defi-sim",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -12,7 +12,8 @@
     "start": "ts-node ./src/index",
     "test": "jest",
     "build": "rm -rf dist/ && tsc --build",
-    "publish": "yarn build && yarn pack"
+    "docs": "typedoc --out docs src/index.ts",
+    "publish-local": "yarn build && npm pack"
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
@@ -20,6 +21,7 @@
     "jest": "^29.3.1",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
+    "typedoc": "^0.23.25",
     "typescript": "^4.9.4"
   },
   "dependencies": {}
