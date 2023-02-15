@@ -1,9 +1,18 @@
 {
   "name": "defi-sim",
-  "version": "1.0.1",
+  "description": "A set of tools that simulate defi protocols with javascript.",
+  "version": "1.0.2",
+  "author": "Samuel Van Erps <sverps@gmail.com>",
+  "license": "MIT",
+  "repository": "sverps/defi-sim",
+  "homepage": "https://sverps.github.io/defi-sim/",
+  "keywords": [
+    "defi",
+    "uniswap",
+    "liquidity pool"
+  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "license": "MIT",
   "files": [
     "dist/**",
     "LICENSE"
