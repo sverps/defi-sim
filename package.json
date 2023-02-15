@@ -1,7 +1,7 @@
 {
   "name": "defi-sim",
   "description": "A set of tools that simulate defi protocols with javascript.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Samuel Van Erps <sverps@gmail.com>",
   "license": "MIT",
   "repository": "sverps/defi-sim",

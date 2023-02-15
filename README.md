@@ -2,9 +2,7 @@
 
 ## Goal
 
-This package attains to be a set of tools to simulate defi protocols based on their whitepaper. It tries to implement a base set of interactions with which to simulate real interactions with protocol contracts.
-
-In a first step, an AMM liquidity pool with concentrated liquidity (e.g. Uniswap V3) was added.
+This package provides tools to simulate Uniswap V3 liquidity positions in different scenarios.
 
 ## Install
 
